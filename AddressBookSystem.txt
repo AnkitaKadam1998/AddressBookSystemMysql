@@ -1,0 +1,40 @@
+AddressBookSystem
+
+uc1
+create databases
+
+create database AddressBookSystem;
+show databases;
+
+use AddressBookSystem;
+
+uc2
+Create table of addressBook
+
+create table AddressBook (FirstName char(7),LastName char(9), Address varchar(35), City char(10),State char(15),zip int,PhoneNumber varchar(10));
+
+uc3
+insert new contact
+INSERT INTO AddressBook(FisrtName,LastName,Address,City,State,zip,PhoneNumber)value('Ankita','Kadam','505 TulipBuilding ghatkoapr east','Mumbai','Maharashtra','400075','2345567589');
+
+INSERT INTO AddressBook(FisrtName,LastName,Address,City,State,zip,PhoneNumber)values('Manish','jadhav','607 pantnagar mulund','Mumbai','Maharashtra','400025','7460836207'),
+('Sneha','hankare','506 daisy society panvel','Mumbai','Maharashtra','400065','9980836207'),
+('Sanket','Desai','707 lotus society pimpri','pune','Maharashtra','400066','8268836207'),
+('prachi','parab','subhaji nivas','Kokan','Maharashtra','400065','9869336207');
+
+uc4
+edit exiting contact using person name
+
+update AddressBook set City='NaviMumabi',zip='300075' where FirstName='Sneha'; 
+
+update AddressBook set LastName='Sarnobat',Address='503 sambhaji nagar',City='Thane',zip='400044',PhoneNumber='9869209457' where FirstName='Sanket';
+
+uc6
+ability to retrieve person belonging to city or state
+
+select FirstName from AddressBook where State='Maharashtra';
+
+uc8
+retrive entires sorted alphabetical by person name for city
+
+select FirstName,City from AddressBook order by FirstName asc;
